@@ -1,0 +1,35 @@
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.table{
+    width:100%;
+}
+.matFormField{
+    padding-right: 20px;
+}
+.side-navbar {
+    background: #eee;
+}
+
+.product-card {
+    padding: 10px;
+}
+.product-card-header{
+    margin-bottom: 20px;
+}
+.filter-panel{
+    padding-top: 8px;
+}
+.search-card-box{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.search-product{
+    font-size: x-large;
+}
+
+.product-body{
+    height: 300px;
+}
