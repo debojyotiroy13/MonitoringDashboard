@@ -20,23 +20,30 @@ export class DashboardComponent {
     private router: Router,private authService: AuthService){
     this.lineChartRefreshData();
     this.pieChartRefreshData();
+    this.barChartRefreshData();
   }
   public arr = [1,2,3,4];
+  public arr1 = [1,2,3];
   public lineChartType: string = 'line';
   public pieChartType: string = 'pie';
   public barChartType: string = 'bar';
-  public chartDatasets: Array<any> = [
-    { data: [], label: 'Used' }
-  ];
 
-  public chartDatasets2: Array<any> = [
-    { data: [], label: 'Total' }
+  public chartDatasets: Array<any> = [
+    { data: [], label: 'MB' }
   ];
+  public chartDatasets2: Array<any> = [
+    { data: [], label: 'MB' }
+  ];
+  public barChartDatasets: Array<any> = [
+    { data: [], label: 'MB' }
+  ];
+  
 
   public chartLabels: Array<any> = ['Used Memory', 'Unused Memory'];
   public chartLabels2: Array<any> = [];
+  public barChartLabels: Array<any> = [];
   public maxLineGraphPoints = 10;
-  // public maxBarGraphPoints = 20;
+  public maxBarGraphPoints = 20;
   
   public lineChartRefreshData(): void{
     const secondsCounter2 = interval(2000);
@@ -45,13 +52,30 @@ export class DashboardComponent {
         let obj : any = window.performance;
         tempData.push(obj.memory.totalJSHeapSize/1000000);
         if(n > this.maxLineGraphPoints){tempData.shift();}
-        this.chartDatasets2 = [{ data: tempData, label: 'Total' }];
+        this.chartDatasets2 = [{ data: tempData, label: 'MB' }];
         let tempLabels = this.chartLabels2;
         var time = new Date();
         var timeString = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
         tempLabels.push(timeString);
         if(n > this.maxLineGraphPoints){tempLabels.shift();}
         this.chartLabels2 = tempLabels;
+    }); 
+  }
+
+  public barChartRefreshData(): void{
+    const secondsCounter2 = interval(2000);
+    secondsCounter2.subscribe(n =>{
+        let tempData2 = this.barChartDatasets[0].data;
+        let obj : any = window.performance;
+        tempData2.push(obj.memory.totalJSHeapSize/1000000);
+        if(n > this.maxBarGraphPoints){tempData2.shift();}
+        this.barChartDatasets = [{ data: tempData2, label: 'MB' }];
+        let tempLabels2 = this.barChartLabels;
+        var time = new Date();
+        var timeString = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        tempLabels2.push(timeString);
+        if(n > this.maxBarGraphPoints){tempLabels2.shift();}
+        this.barChartLabels = tempLabels2;
     }); 
   }
 

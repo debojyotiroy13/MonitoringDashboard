@@ -57,10 +57,6 @@
                       </canvas>
                     </div>
               </mat-card-content>
-              <!-- <mat-card-actions>
-                <button mat-button mat-raised-button color="accent">Actions</button>
-                <button mat-button mat-raised-button color="accent">Refresh</button>
-              </mat-card-actions> -->
         </mat-card>
     </div>
     <div class="col-md-4" style="height: 400px;">
@@ -73,8 +69,8 @@
                   <div style="display: block">
                       <canvas mdbChart
                           [chartType]="barChartType"
-                          [datasets]="chartDatasets2"
-                          [labels]="chartLabels2"
+                          [datasets]="barChartDatasets"
+                          [labels]="barChartLabels"
                           [colors]="chartColorsLine"
                           [options]="chartOptions"
                           [legend]="true"
@@ -83,21 +79,19 @@
                       </canvas>
                     </div>
               </mat-card-content>
-              <!-- <mat-card-actions>
-                <button mat-button mat-raised-button color="accent">Actions</button>
-                <button mat-button mat-raised-button color="accent">Refresh</button>
-              </mat-card-actions> -->
         </mat-card>
     </div>
     
 </div>
 
 <div class="row" style="margin-bottom: 30px;">
-    <div class="col-md-3 small-card" *ngFor="let cat of arr">
+    <div class="col-md-4 small-card" *ngFor="let cat of arr1">
         <mat-card class="">
-            <p class="small-card-text-header">Avg.UsedJSHeapSize</p>
+            <mat-card-header>
+                <mat-card-title>Lorem Ipsum</mat-card-title>
+            </mat-card-header>
             <mat-card-content>
-                <p class="small-card-text">17,000</p>
+                <p class="small-card-text-header">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled </p>    
             </mat-card-content>
         </mat-card>
     </div>
