@@ -4,27 +4,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './views/seller/product.component';
-import { ListComponent } from './views/buyer/buyer.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/login/signup.component'
-import { ProductDetailsComponent } from './views/buyer/product.details.component'
+import { ProductDetailsComponent } from './views/dashboard/product.details.component'
 
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { HttpClientModule} from '@angular/common/http';
-import { RestService} from './app.service';
+import { RestService} from './services/app.service';
 import { AuthService} from './services/auth.service';
-import { SellerService} from './services/seller.service';
 import { Routes, RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    ListComponent,
+    DashboardComponent,
     AdminComponent,
     LoginComponent,
     SignupComponent,
@@ -39,7 +36,7 @@ import { Routes, RouterModule } from '@angular/router';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [RestService, AuthService, SellerService],
+  providers: [RestService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

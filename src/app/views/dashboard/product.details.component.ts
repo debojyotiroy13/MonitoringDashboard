@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RestService} from '../../app.service';
+import {RestService} from '../../services/app.service';
 import {Observable, throwError } from 'rxjs';
 import {HttpClient, HttpHeaders } from "@angular/common/http";
 import {MatSnackBar} from '@angular/material';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'product-root',
   templateUrl: './product.details.component.html',
-  styleUrls: ['./buyer.component.css']
+  styleUrls: ['./dashboard.component.css']
 })
 
 
@@ -23,9 +23,6 @@ export class ProductDetailsComponent implements OnInit{
   productDescription: string = '';
   productPrice: number;
   productCategory: string = '';
-
-  answerDisplay: string = '';
-  showSpinner: boolean = false;
 
   /* Product Table Params */
   displayedColumns: string[] = [ 'category', 'name', 'description', 'price', 'action'];

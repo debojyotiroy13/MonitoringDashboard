@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RestService} from '../../app.service';
+import {RestService} from '../../services/app.service';
 import {Observable, throwError } from 'rxjs';
 import {HttpClient, HttpHeaders } from "@angular/common/http";
 import {MatSnackBar} from '@angular/material';

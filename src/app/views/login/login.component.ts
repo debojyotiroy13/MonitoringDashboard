@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RestService} from '../../app.service';
+import {RestService} from '../../services/app.service';
 import {Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material';
 import { AuthService } from 'src/app/services/auth.service';

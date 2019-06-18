@@ -1,0 +1,33 @@
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card {
+    padding: 10px;
+}
+.product-card-header{
+    margin-bottom: 20px;
+}
+
+
+.product-body{
+    height: 300px;
+}
+
+.small-card-text{
+    text-align: center;
+    font-weight: 700;
+    font-size: -webkit-xxx-large;
+    color: #456;
+}
+.small-card-text-header{
+    text-align: center;
+    font-weight: 700;
+    color: #456;
+    width: 100%;
+}
+
+.small-card{
+    padding: 0;
+}
